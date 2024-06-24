@@ -1,0 +1,9 @@
+@font-face {
+    font-family: Montserrat Regular;
+    src: url(/static/fonts/montserrat/Montserrat-Regular.otf);
+}
+
+body {
+    font: 2em Montserrat Regular;
+    background-color: rgb(255, 164, 125);
+}
