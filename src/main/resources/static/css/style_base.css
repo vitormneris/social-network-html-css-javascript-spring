@@ -8,6 +8,11 @@
     src: url(/static/fonts/montserrat/Montserrat-Regular.otf);
 }
 
+@font-face {
+    font-family: Montserrat Alternates-Medium;
+    src: url(/static/fonts/montserrat/MontserratAlternates-Medium.otf);
+}
+
 body {
     font: 2em Montserrat Regular;
     background-color: rgb(255, 164, 125);

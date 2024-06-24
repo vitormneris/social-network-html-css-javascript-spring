@@ -22,6 +22,7 @@
     height: 70%;
 
     background-color: rgba(255, 109, 60, 0.832);
+    box-shadow: 4px 4px;
 }
 
 .content {
@@ -70,4 +71,10 @@ h1 {
     border: 3px solid black;
     border-radius: 10px;
     background-color: rgba(237, 193, 178, 0.832);
+}
+
+.input-class #message {
+    display: block;
+    
+    height: 10px;
 }

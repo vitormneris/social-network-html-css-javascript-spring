@@ -19,6 +19,7 @@
 
     background-color: rgba(255, 109, 60, 0.832);
     overflow: hidden;
+    box-shadow: 4px 4px;
 }
 
 .content-h1 {
