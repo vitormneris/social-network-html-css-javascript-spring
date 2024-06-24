@@ -1,0 +1,30 @@
+nav {
+    display: flex;
+    justify-content: center;
+
+    background-color: rgb(240, 76, 76);
+}
+
+ul {
+    display: flex;
+}
+
+li {
+    padding: 10px;
+    margin-left: 10px;
+    margin-right: 10px;
+    background-color: rgb(241, 62, 62);
+    border-radius: 10px;
+
+}
+
+li:hover {
+    transform: scale(1.08);
+    transition: 400ms;
+}
+
+a {
+    text-decoration: none;
+    color: black;
+}
+
