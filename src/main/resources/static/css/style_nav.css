@@ -1,21 +1,27 @@
 nav {
     display: flex;
     justify-content: center;
+    align-items: center;
 
-    background-color: rgb(240, 76, 76);
+    height: 3em;
+
+    background-color: rgb(235, 90, 90);
+
+    border-end-start-radius: 30px;
+    border-end-end-radius: 30px;
 }
 
 ul {
     display: flex;
+    height: 80%;
 }
 
 li {
     padding: 10px;
     margin-left: 10px;
     margin-right: 10px;
-    background-color: rgb(241, 62, 62);
+    background-color: rgb(243, 53, 53);
     border-radius: 10px;
-
 }
 
 li:hover {

@@ -1,0 +1,36 @@
+.container {
+    width: 60%;
+}
+
+.content {
+    display: flex;
+    flex-direction: column;
+}
+
+.form-content {
+    display: flex;
+}
+
+.img-content {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+
+    width: 100%;
+}
+
+.user-image {
+    border: 5px solid black;
+    border-radius: 20px;
+
+    box-shadow: 4px 4px;
+
+    width: 45%;
+    height: 45%;
+
+    margin: 10%;
+
+    background-color: rgb(254, 101, 101);
+}
+

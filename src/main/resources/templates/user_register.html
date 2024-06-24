@@ -6,18 +6,22 @@
 
         <link rel="stylesheet" href="/static/css/style_reset.css">
         <link rel="stylesheet" href="/static/css/style_base.css">
+        <link rel="stylesheet" href="/static/css/style_base_align.css">
         <link rel="stylesheet" href="/static/css/style_nav.css">
         <link rel="stylesheet" href="/static/css/style_form.css">
+        <link rel="stylesheet" href="/static/css/style_register.css">
+
 
         <title>Register user</title>
     </head>
     <body>
         <nav>
             <ul>
-                <li><a href="user_list.html">User list</a></li>
-                <li><a href="user_login.html">User login</a></li>
-                <li><a href="user_register.html">User register</a></li>
-                <li><a href="feed.html">Feed</a></li>
+                <a href="user_list.html"><li>User list</li></a>
+                <a href="user_login.html"><li>User login</li></a>
+                <a href="user_register.html"><li>User register</li></a>
+                <a href="user-profile.html"><li>User profile</li></a>
+                <a href="feed.html"><li>Feed</li></a>
             </ul>
         </nav>
 
@@ -28,20 +32,30 @@
         <main class="main-container">
             <div class="container">
                 <div class="content">
-                    <label class="label-class" for="name">Name: </label>
-                    <input class="input-class" id="name" type="text" placeholder="Type your name">
+                    <div class="form-content">
+                        <div class="info-content">
+                            <label class="label-class" for="name">Name: </label>
+                            <input class="input-class" id="name" type="text" placeholder="Type your name">
 
-                    <label class="label-class" for="email">E-mail</label>
-                    <input class="input-class" id="email" type="email" placeholder="Type your e-mail">
+                            <label class="label-class" for="email">E-mail</label>
+                            <input class="input-class" id="email" type="email" placeholder="Type your e-mail">
 
-                    <label class="label-class" for="password">Password</label>
-                    <input class="input-class" id="password" type="password" placeholder="Type your password">
+                            <label class="label-class" for="password">Password</label>
+                            <input class="input-class" id="password" type="password" placeholder="Type your password">
+                        </div>
 
+                        <div class="img-content">
+                            <label for="image">Add your photo </label>
+                            <input class="input-image-class" id="image" type="file" placeholder="Insert your photo" onchange="setImage(event)">
+                            <img class="user-image" id="user-image">
+                        </div>
+                    </div>
                     <div class="content-button">
                         <button class="button-class">Submit</button>
                     </div>
                 </div>
             </div>
         </main>
+        <script src="/static/js/setImage.js"></script>
     </body>
 </html>

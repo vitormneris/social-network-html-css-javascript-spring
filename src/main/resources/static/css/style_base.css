@@ -17,3 +17,19 @@ body {
     font: 2em Montserrat Regular;
     background-color: rgb(255, 164, 125);
 }
+
+input:focus {
+    outline: 2px solid rgba(0, 0, 0, 0.313);
+}
+
+textarea:focus {
+    outline: 2px solid rgba(0, 0, 0, 0.313);
+}
+
+textarea {
+    resize: none;
+}
+
+input[type='file'] {
+    display: none;
+} 
