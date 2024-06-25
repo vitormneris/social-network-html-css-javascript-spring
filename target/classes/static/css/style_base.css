@@ -1,0 +1,35 @@
+@font-face {
+    font-family: Montserrat SemiBold;
+    src: url(/static/fonts/montserrat/Montserrat-SemiBold.otf);
+}
+
+@font-face {
+    font-family: Montserrat Regular;
+    src: url(/static/fonts/montserrat/Montserrat-Regular.otf);
+}
+
+@font-face {
+    font-family: Montserrat Alternates-Medium;
+    src: url(/static/fonts/montserrat/MontserratAlternates-Medium.otf);
+}
+
+body {
+    font: 2em Montserrat Regular;
+    background-color: rgb(255, 164, 125);
+}
+
+input:focus {
+    outline: 2px solid rgba(0, 0, 0, 0.313);
+}
+
+textarea:focus {
+    outline: 2px solid rgba(0, 0, 0, 0.313);
+}
+
+textarea {
+    resize: none;
+}
+
+input[type='file'] {
+    display: none;
+} 

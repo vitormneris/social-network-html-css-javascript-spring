@@ -1,0 +1,56 @@
+.main-container {   
+    display: flex;  
+    height: 70vh; 
+}
+
+.container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: 2px solid black;
+    border-radius: 20px;
+
+    margin: auto;
+
+    min-width: 800px;
+    min-height: 400px;
+
+    width: 70%;
+
+    background-color: rgba(255, 109, 60, 0.832);
+    overflow: hidden;
+    box-shadow: 4px 4px;
+}
+
+.content-h1 {
+    margin-top: 70px;
+    text-align: center;
+}
+
+h1 {
+    font-size: 2em;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+th, td {
+    border: 2px solid black;
+    padding: 30px;
+}
+
+th {
+    font: 1em Montserrat SemiBold;
+}
+
+td {
+    background-color: rgb(251, 130, 89);
+}
+
+td:hover {
+    background-color: rgb(245, 84, 31);
+    transform: scale(1.08);
+    transition: 400ms;
+}

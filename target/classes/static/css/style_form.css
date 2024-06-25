@@ -1,0 +1,40 @@
+.content-button {
+    text-align: center;
+}
+
+.button-class {
+    font: 20px Montserrat Regular;
+
+    padding: 20px;
+    padding-left: 80px;
+    padding-right: 80px;
+
+    border: 2px solid black;
+
+    box-shadow: 3px 3px;
+    border-radius: 10px;
+
+    background-color: rgba(255, 178, 152, 0.832);
+}
+
+.button-class:hover {
+    transition: 400ms;
+    transform: scale(1.07);
+    color: rgb(61, 0, 227);
+    border: 2px solid rgb(61, 0, 227);
+}
+
+.input-class {
+    width: 95%;
+    margin-bottom: 60px;
+    padding: 10px;
+    border: 3px solid black;
+    border-radius: 10px;
+    background-color: rgba(237, 193, 178, 0.832);
+}
+
+.input-class #message {
+    display: block;
+
+    height: 10px;
+}

@@ -1,0 +1,30 @@
+.content {
+    width: 95%;
+}
+
+.items {
+    border: 2px solid black;
+    border-radius: 20px;
+
+    margin: 20px;
+    padding: 10px;
+
+    background-color: rgba(247, 133, 96, 0.832);
+}
+
+.parag-class {
+    display: inline;
+    font: 1em Montserrat SemiBold;
+}
+
+.img-class {
+    border: 3px solid black;
+
+    display: flex;
+    margin: auto;
+
+    border-radius: 90px;
+
+    width: 60%;
+    height: 60%;
+}

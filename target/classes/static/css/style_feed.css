@@ -1,0 +1,93 @@
+.main-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+
+    /* border-left: 3px solid black;
+    border-right: 3px solid black; */
+    
+    min-width: 400px;
+    width: 50%;
+}    
+
+.items {
+    border: 2px solid black;
+    border-radius: 20px;
+
+    box-shadow: 3px 3px;
+
+    width: 100%;
+
+    margin: 20px;
+    padding: 20px;
+
+    background-color: rgba(255, 109, 60, 0.832);
+}
+
+.text-content {
+    text-align: justify;
+
+    border-radius: 20px;
+
+    background-color: rgba(233, 233, 233, 0.175);
+
+    padding: 10px;
+}
+
+.info-content {
+    font: 0.6em Montserrat Alternates-Medium;
+    padding: 5px;
+}
+
+
+h2 {
+    margin: 10px;
+    margin-bottom: 20px;
+    text-align: center;
+    font: 1em Montserrat SemiBold;
+}
+
+.button-content {
+    position: fixed;
+    bottom: 2%;
+    left: 93%;
+}
+
+.a-class {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    width: 20px;
+    height: 20px;
+
+    padding: 40px;
+
+    border: 4px solid black;
+    border-radius: 20px;
+
+    background-color: rgba(255, 109, 60, 0.832);
+
+    box-shadow: 3px 3px;
+}
+
+.a-class:hover {
+    transform: scale(1.1);
+    transition: 400ms;
+}
+
+.button-class {
+    background-color: rgba(1, 1, 1, 0);
+    border-color: rgba(1, 1, 1, 0);
+}
+
+.parag-class {
+    font-size: 80px;
+}
