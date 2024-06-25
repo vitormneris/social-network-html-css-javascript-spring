@@ -4,10 +4,12 @@
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         
-        <link rel="stylesheet" href="/static/css/style_reset.css">
-        <link rel="stylesheet" href="/static/css/style_base.css">
-        <link rel="stylesheet" href="/static/css/style_nav.css">
-        <link rel="stylesheet" href="/static/css/style_table.css">
+        <link rel="stylesheet" href="../static/css/style_reset.css">
+        <link rel="stylesheet" href="../static/css/style_base.css">
+        <link rel="stylesheet" href="../static/css/style_nav.css">
+        <link rel="stylesheet" href="../static/css/style_table.css">
+
+        <script src="../static/api/user/findAll.js"></script>
 
         <title>Administrator page</title>
     </head>
@@ -30,31 +32,15 @@
         <main class="main-container">
             <div class="container">
                 <table>
-                    <tr>
-                        <th>Name</th>
-                        <th>E-mail</th>
-                        <th>Password</th>
-                    </tr>
-                    <tr>
-                        <td>João Vítor</td>
-                        <td>joao@email.com</td>
-                        <td>12345678</td>
-                    </tr>
-                    <tr>
-                        <td>Carlos Ribeiro</td>
-                        <td>carlos@email.com</td>
-                        <td>43218765</td>
-                    </tr>            
-                    <tr>
-                        <td>Maria da Silva</td>
-                        <td>maria@email.com</td>
-                        <td>87654321</td>
-                    </tr>            
-                    <tr>
-                        <td>Ana Paula</td>
-                        <td>ana@email.com</td>
-                        <td>56781234</td>
-                    </tr>
+                    <tbody id="dataList">
+                        <tr>
+                            <th>Id</th>
+                            <th>Name</th>
+                            <th>E-mail</th>
+                            <th>Password</th>
+                            <th>Url image</th>
+                        </tr>
+                    </tbody>
                 </table>
             </div>
         </main>

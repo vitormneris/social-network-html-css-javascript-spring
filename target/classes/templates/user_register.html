@@ -4,13 +4,15 @@
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-        <link rel="stylesheet" href="/static/css/style_reset.css">
-        <link rel="stylesheet" href="/static/css/style_base.css">
-        <link rel="stylesheet" href="/static/css/style_base_align.css">
-        <link rel="stylesheet" href="/static/css/style_nav.css">
-        <link rel="stylesheet" href="/static/css/style_form.css">
-        <link rel="stylesheet" href="/static/css/style_register.css">
+        <link rel="stylesheet" href="../static/css/style_reset.css">
+        <link rel="stylesheet" href="../static/css/style_base.css">
+        <link rel="stylesheet" href="../static/css/style_base_align.css">
+        <link rel="stylesheet" href="../static/css/style_nav.css">
+        <link rel="stylesheet" href="../static/css/style_form.css">
+        <link rel="stylesheet" href="../static/css/style_register.css">
 
+
+        <script src="../static/js/setImage.js"></script>
 
         <title>Register user</title>
     </head>
@@ -32,30 +34,34 @@
         <main class="main-container">
             <div class="container">
                 <div class="content">
-                    <div class="form-content">
-                        <div class="info-content">
-                            <label class="label-class" for="name">Name: </label>
-                            <input class="input-class" id="name" type="text" placeholder="Type your name">
+                    <form id="form-insert" >
+                        <div class="form-content">
+                            <div class="info-content">
+                                <label class="label-class" for="name">Name: </label>
+                                <input class="input-class" id="name" type="text" placeholder="Type your name">
 
-                            <label class="label-class" for="email">E-mail</label>
-                            <input class="input-class" id="email" type="email" placeholder="Type your e-mail">
+                                <label class="label-class" for="email">E-mail</label>
+                                <input class="input-class" id="email" type="email" placeholder="Type your e-mail">
 
-                            <label class="label-class" for="password">Password</label>
-                            <input class="input-class" id="password" type="password" placeholder="Type your password">
+                                <label class="label-class" for="password">Password</label>
+                                <input class="input-class" id="password" type="password" placeholder="Type your password">
+                            </div>
+
+                            <div class="img-content">
+                                <label for="image">Add your photo </label>
+                                <input class="input-image-class" id="image" type="file" placeholder="Insert your photo" onchange="setImage(event)">
+                                <img class="user-image" id="user-image" alt="Your photo" src="../static/images/users/Sample_User_Icon.png">
+                            </div>
                         </div>
+                        <div class="content-button">
+                            <button type="submit" class="button-class">Submit</button>
+                            <div id="status" class="status"></div>
 
-                        <div class="img-content">
-                            <label for="image">Add your photo </label>
-                            <input class="input-image-class" id="image" type="file" placeholder="Insert your photo" onchange="setImage(event)">
-                            <img class="user-image" id="user-image">
                         </div>
-                    </div>
-                    <div class="content-button">
-                        <button class="button-class">Submit</button>
-                    </div>
+                    </form>
                 </div>
             </div>
         </main>
-        <script src="/static/js/setImage.js"></script>
+        <script src="../static/api/user/insert.js"></script>
     </body>
 </html>

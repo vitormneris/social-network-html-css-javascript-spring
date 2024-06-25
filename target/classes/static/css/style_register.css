@@ -5,6 +5,7 @@
 .content {
     display: flex;
     flex-direction: column;
+
 }
 
 .form-content {
@@ -34,3 +35,6 @@
     background-color: rgb(254, 101, 101);
 }
 
+.status {
+    font-size: 0.7em;
+}
