@@ -7,23 +7,26 @@ import java.io.IOException;
 import java.nio.file.Files;
 import java.nio.file.Path;
 import java.nio.file.Paths;
+import java.util.Objects;
 
 @Service
 public class UploadImageService {
 
-    public String uploadImage(MultipartFile file) throws InternalError {
-        String url = "/home/vitor/github/SocialNetwork/src/main/resources/static/images/users/";
+    String url = "/home/vitor/github/SocialNetwork/src/main/resources/static/images/users/";
 
-        try {
+    public String uploadImage(String username, MultipartFile file) throws IOException {
 
-            byte[] bytes = file.getBytes();
-            Path path = Paths.get(url + file.getOriginalFilename());
-            Files.write(path, bytes);
+        String newName = username + extesionImage(Objects.requireNonNull(file.getOriginalFilename()));
 
-        } catch (IOException e) {
-            throw new InternalError("Unable to save image");
-        }
+        byte[] bytes = file.getBytes();
+        Path path = Paths.get(url + newName);
+        Files.write(path, bytes);
 
-        return "/images/users/" + file.getOriginalFilename();
+        return "../static/images/users/" + newName;
+    }
+
+    private String extesionImage(String nameImage) {
+        String[] strings = nameImage.split("\\.");
+        return "." + strings[strings.length - 1];
     }
 }
