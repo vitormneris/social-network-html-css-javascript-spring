@@ -26,7 +26,7 @@ public class UserController {
     }
 
     @PostMapping
-    public ResponseEntity<UserEntity> insert(@RequestPart(value = "user") UserDTO userDTO, @RequestPart(value = "file") MultipartFile file) {
+    public ResponseEntity<UserEntity> insert(@RequestPart(value = "user") UserDTO userDTO, @RequestPart(value = "file", required = false) MultipartFile file) {
         UserEntity userEntity = userService.insert(userMapper.userDTOToUserEntity(userDTO), file);
         URI uri = ServletUriComponentsBuilder.fromCurrentRequest().path("/{email}").buildAndExpand(userEntity.getEmail()).toUri();
         return ResponseEntity.created(uri).body(userEntity);

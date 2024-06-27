@@ -36,6 +36,7 @@ table {
 }
 
 th, td {
+
     border-right: 2px solid black;
     padding: 30px;
 
@@ -49,6 +50,9 @@ th {
 td {
     background-color: rgb(251, 130, 89);
 
+    vertical-align: middle;
+    text-align: center;
+    
     overflow: hidden;
 }
 
@@ -57,5 +61,20 @@ td:hover {
     transition: 800ms;
 
     overflow: visible;
+}
+
+.td-img-class {
+    width: 100px;
+    height: 100px;
+
+}
+
+img {
+    transform: scale(1.4);
+
+    border-radius: 10px;
+
+    width: 100%;
+    height: 100%;
 }
 

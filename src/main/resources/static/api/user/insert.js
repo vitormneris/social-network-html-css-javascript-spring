@@ -20,10 +20,14 @@ document.getElementById("form-insert").addEventListener("submit", function(event
         method: 'POST',
         body: formData
     })
-    .then(response => {
+    .then(async response => {
         if (response.status === 201) {
             console.log("CREATED WITH SUCCESSFULLY")
-            showMessage("Account created successfully.")
+            showMessage("Account created successfully.", "green")
+        } else {
+            console.log("ERROR. NOT CREATED")
+            const errorJson = JSON.parse(await response.text())
+            showMessage(errorJson.message, "red")
         }
     })
     .catch(error => {
@@ -31,11 +35,14 @@ document.getElementById("form-insert").addEventListener("submit", function(event
     })
 })
 
-function showMessage(msg) {
+function showMessage(msg,cl) {
     const divStatus = document.getElementById("status")
+    
+    if (divStatus.querySelector("p")) divStatus.querySelector("p").remove()
 
     const pag = document.createElement("p")
     pag.textContent = msg
+    pag.style.color = cl
 
     divStatus.appendChild(pag)
 }

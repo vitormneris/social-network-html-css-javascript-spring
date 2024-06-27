@@ -1,5 +1,6 @@
 package com.socialnetwork.socialnetwork.infrastructure.entities;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
@@ -8,6 +9,8 @@ import lombok.NoArgsConstructor;
 
 import java.io.Serial;
 import java.io.Serializable;
+import java.util.ArrayList;
+import java.util.List;
 
 @Data
 @Builder
@@ -19,17 +22,23 @@ public class UserEntity  implements Serializable {
     private static final long serialVersionUID = 1L;
 
     @Id @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Column(unique = true, nullable = false)
     private Long id;
 
-    @Column(unique = true, nullable = false)
+    @Column(length = 50,  unique = true, nullable = false)
     private String username;
 
-    @Column(unique = true, nullable = false)
+    @Column(length = 254, unique = true, nullable = false)
     private String email;
 
-    @Column(nullable = false)
+    @Column(length = 64, nullable = false)
     private String password;
 
-    @Column(unique = true, nullable = false)
+    @Column(length = 254, unique = true, nullable = false)
     private String urlImage;
+
+    @JsonIgnore
+    @Column(nullable = false)
+    @OneToMany(mappedBy = "author")
+    private List<PublicationEntity> publications = new ArrayList<>();
 }

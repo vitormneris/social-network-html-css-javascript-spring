@@ -38,11 +38,11 @@ public class CheckFiledService {
 
     private void isNull(String field, String value) throws FieldBlankException {
         if (value == null || value.isBlank())
-            throw new FieldBlankException("The field cannot be blank. " + value);
+            throw new FieldBlankException("The field cannot be blank. " + field);
     }
 
     private void isNull(MultipartFile value) throws FieldBlankException {
-        if (value.isEmpty())
+        if (value == null || value.isEmpty())
             throw new FieldBlankException("The field cannot be blank. Image");
     }
 }

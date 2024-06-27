@@ -36,7 +36,10 @@ function showData(data) {
         trList.appendChild(tdPassword)
 
         const tdUrlImage = document.createElement("td")
-        tdUrlImage.textContent = element.urlImage
+        const img = document.createElement("img")
+        img.src = element.urlImage
+        tdUrlImage.className = "td-img-class"
+        tdUrlImage.appendChild(img)
         trList.appendChild(tdUrlImage)
 
         div.appendChild(trList)

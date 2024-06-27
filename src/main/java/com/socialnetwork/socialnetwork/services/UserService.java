@@ -10,19 +10,18 @@ import org.springframework.stereotype.Service;
 import org.springframework.web.multipart.MultipartFile;
 
 import java.io.IOException;
-import java.sql.SQLIntegrityConstraintViolationException;
 import java.util.List;
 
 @RequiredArgsConstructor
 @Service
 public class UserService {
-    private final UserRepository userRepository;
+    private final UserRepository repository;
     private final UploadImageService uploadImageService;
     private final CheckFiledService checkFiledService;
     private final CheckDatabaseService checkDatabaseService;
 
     public List<UserEntity> findAll() {
-        return userRepository.findAll();
+        return repository.findAll();
     }
 
     public UserEntity insert(UserEntity userEntity, MultipartFile image) {
@@ -35,7 +34,7 @@ public class UserService {
             checkDatabaseService.usernameExists(userEntity.getUsername());
 
             userEntity.setUrlImage(uploadImageService.uploadImage(userEntity.getUsername(), image));
-            return userRepository.save(userEntity);
+            return repository.save(userEntity);
 
         } catch (InvalidFormatException e) {
             throw new InvalidFormatException(e.getMessage());
