@@ -8,14 +8,19 @@ import lombok.Data;
 import lombok.NoArgsConstructor;
 
 
+import java.io.Serial;
+import java.io.Serializable;
 import java.time.LocalDateTime;
 
 @Data
 @Builder
 @AllArgsConstructor
 @NoArgsConstructor
-@Entity(name = "tb_publications")
-public class PublicationEntity {
+@Entity
+@Table(name = "tb_publications")
+public class PublicationEntity implements Serializable {
+    @Serial
+    private static final long serialVersionUID = 1L;
 
     @Id @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(unique = true, nullable = false)

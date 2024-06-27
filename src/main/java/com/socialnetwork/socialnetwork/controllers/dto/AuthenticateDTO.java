@@ -1,7 +1,6 @@
 package com.socialnetwork.socialnetwork.controllers.dto;
 
-public record UserDTO(
-        String username,
+public record AuthenticateDTO(
         String login,
         String password
 ) {

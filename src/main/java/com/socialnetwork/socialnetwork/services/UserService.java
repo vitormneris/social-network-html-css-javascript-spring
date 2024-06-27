@@ -6,6 +6,7 @@ import com.socialnetwork.socialnetwork.services.exceptions.DatabaseException;
 import com.socialnetwork.socialnetwork.services.exceptions.FieldBlankException;
 import com.socialnetwork.socialnetwork.services.exceptions.InvalidFormatException;
 import lombok.RequiredArgsConstructor;
+import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.stereotype.Service;
 import org.springframework.web.multipart.MultipartFile;
 
@@ -30,10 +31,11 @@ public class UserService {
             checkFiledService.checkFieldUser(userEntity);
             checkFiledService.checkFieldImage(image);
 
-            checkDatabaseService.emailExists(userEntity.getEmail());
+            checkDatabaseService.emailExists(userEntity.getLogin());
             checkDatabaseService.usernameExists(userEntity.getUsername());
 
             userEntity.setUrlImage(uploadImageService.uploadImage(userEntity.getUsername(), image));
+            userEntity.setPassword(new BCryptPasswordEncoder().encode(userEntity.getPassword()));
             return repository.save(userEntity);
 
         } catch (InvalidFormatException e) {

@@ -21,7 +21,7 @@ public class CheckDatabaseService {
     }
 
     public void emailExists(String email) throws DatabaseException {
-        Optional<UserEntity> obj = userRepository.findByEmail(email);
+        Optional<UserEntity> obj = userRepository.findByLogin(email);
 
         if (obj.isPresent())
             throw new DatabaseException("Email already exists");

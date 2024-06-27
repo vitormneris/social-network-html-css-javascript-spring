@@ -6,7 +6,6 @@ import com.socialnetwork.socialnetwork.services.exceptions.InvalidFormatExceptio
 import org.springframework.stereotype.Service;
 import org.springframework.web.multipart.MultipartFile;
 
-import java.util.Arrays;
 import java.util.Objects;
 
 @Service
@@ -17,9 +16,9 @@ public class CheckFiledService {
         if (!userEntity.getUsername().matches("^[a-zA-Z0-9 ]+$"))
             throw new InvalidFormatException("username", userEntity.getUsername());
 
-        isNull("e-mail", userEntity.getEmail());
-        if (!userEntity.getEmail().matches("^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\\.[a-zA-Z]{2,}$"))
-            throw new InvalidFormatException("e-mail", userEntity.getEmail());
+        isNull("e-mail", userEntity.getLogin());
+        if (!userEntity.getLogin().matches("^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\\.[a-zA-Z]{2,}$"))
+            throw new InvalidFormatException("e-mail", userEntity.getLogin());
 
         isNull("password", userEntity.getPassword());
         if (userEntity.getPassword().length() < 8)
