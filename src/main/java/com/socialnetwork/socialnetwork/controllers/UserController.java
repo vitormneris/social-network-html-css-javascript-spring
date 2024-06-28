@@ -3,6 +3,7 @@ package com.socialnetwork.socialnetwork.controllers;
 import com.socialnetwork.socialnetwork.controllers.dto.UserDTO;
 import com.socialnetwork.socialnetwork.controllers.mapper.UserMapper;
 import com.socialnetwork.socialnetwork.infrastructure.entities.UserEntity;
+import com.socialnetwork.socialnetwork.services.TokenService;
 import com.socialnetwork.socialnetwork.services.UserService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.ResponseEntity;
@@ -19,10 +20,18 @@ import java.util.List;
 public class UserController {
     private final UserService userService;
     private final UserMapper userMapper;
+    private final TokenService tokenService;
 
     @GetMapping
     public ResponseEntity<List<UserEntity>> findAll() {
         return ResponseEntity.ok().body(userService.findAll());
+    }
+
+    @GetMapping("/profile")
+    public ResponseEntity<UserEntity> findById(@RequestHeader("Authorization") String token) {
+        token = token.replace("Bearer ", "");
+        Long userId = tokenService.validateTokenClaim(token).asLong();
+        return ResponseEntity.ok().body(userService.findById(userId));
     }
 
     @PostMapping

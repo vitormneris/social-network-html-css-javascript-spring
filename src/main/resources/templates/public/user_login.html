@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en-US">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+        <link rel="stylesheet" href="../../static/css/style_reset.css">
+        <link rel="stylesheet" href="../../static/css/style_base.css">
+        <link rel="stylesheet" href="../../static/css/style_base_align.css">
+        <link rel="stylesheet" href="../../static/css/style_nav.css">
+        <link rel="stylesheet" href="../../static/css/style_form.css">
+
+        <title>Login page</title>
+    </head>
+    <body>
+
+        <nav>
+            <ul>
+                <a href="../administration/user_list.html"><li>User list</li></a>
+                <a href="user_login.html"><li>User login</li></a>
+                <a href="user_register.html"><li>User register</li></a>
+                <a href="../user/user-profile.html"><li>User profile</li></a>
+                <a href="feed.html"><li>Feed</li></a>
+            </ul>
+        </nav>
+
+        <div class="content-h1">
+            <h1>Login</h1>
+        </div>
+
+        <main class="main-container">
+            <div class="container">
+                <div class="content">
+                    <form id="form-login">
+                        <label class="label-class" for="email">E-mail</label>
+                        <input class="input-class" id="email" type="email" placeholder="Type your e-mail">
+
+                    
+                        <label class="label-class" for="password">Password</label>
+                        <input class="input-class" id="password" type="password" placeholder="Type your password">
+
+                        <div class="content-button">
+                            <button type="submit" class="button-class">Submit</button>
+                        </div>
+
+                        <div id="status" class="status"></div>
+                    </form>
+                </div>
+            </div>
+        </main>
+        <script src="../../static/api/login.js"></script>
+    </body>
+</html>

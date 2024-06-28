@@ -31,7 +31,7 @@ public class SecurityFilter extends OncePerRequestFilter {
         var token = this.recoverToken(request);
 
         if (token != null) {
-            var subject = tokenService.validateToken(token);
+            var subject = tokenService.validateTokenSubject(token);
             UserEntity user = userRepository.findByLogin(subject).orElseThrow(() -> new ResourceNotFoundException("User not found"));
 
             var authentication = new UsernamePasswordAuthenticationToken(user, null, user.getAuthorities());

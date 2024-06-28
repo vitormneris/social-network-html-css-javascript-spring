@@ -10,7 +10,7 @@ document.getElementById("form-insert").addEventListener("submit", function(event
 
     formData.append("user", new Blob([JSON.stringify({
         username: name,
-        email: email,
+        login: email,
         password: password
     })], { type: "application/json" }));
 

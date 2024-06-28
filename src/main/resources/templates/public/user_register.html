@@ -4,25 +4,25 @@
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-        <link rel="stylesheet" href="../static/css/style_reset.css">
-        <link rel="stylesheet" href="../static/css/style_base.css">
-        <link rel="stylesheet" href="../static/css/style_base_align.css">
-        <link rel="stylesheet" href="../static/css/style_nav.css">
-        <link rel="stylesheet" href="../static/css/style_form.css">
-        <link rel="stylesheet" href="../static/css/style_register.css">
+        <link rel="stylesheet" href="../../static/css/style_reset.css">
+        <link rel="stylesheet" href="../../static/css/style_base.css">
+        <link rel="stylesheet" href="../../static/css/style_base_align.css">
+        <link rel="stylesheet" href="../../static/css/style_nav.css">
+        <link rel="stylesheet" href="../../static/css/style_form.css">
+        <link rel="stylesheet" href="../../static/css/style_register.css">
 
 
-        <script src="../static/js/setImage.js"></script>
+        <script src="../../static/js/setImage.js"></script>
 
         <title>Register user</title>
     </head>
     <body>
         <nav>
             <ul>
-                <a href="user_list.html"><li>User list</li></a>
+                <a href="../administration/user_list.html"><li>User list</li></a>
                 <a href="user_login.html"><li>User login</li></a>
                 <a href="user_register.html"><li>User register</li></a>
-                <a href="user-profile.html"><li>User profile</li></a>
+                <a href="../user/user-profile.html"><li>User profile</li></a>
                 <a href="feed.html"><li>Feed</li></a>
             </ul>
         </nav>
@@ -50,7 +50,7 @@
                             <div class="img-content">
                                 <label for="image">Add your photo </label>
                                 <input class="input-image-class" id="image" type="file" placeholder="Insert your photo" onchange="setImage(event)">
-                                <img class="user-image" id="user-image" alt="Your photo" src="../static/images/users/Sample_User_Icon.png">
+                                <img class="user-image" id="user-image" alt="Your photo" src="../../static/images/users/Sample_User_Icon.png">
                             </div>
                         </div>
                         <div class="content-button">
@@ -62,6 +62,6 @@
                 </div>
             </div>
         </main>
-        <script src="../static/api/user/insert.js"></script>
+        <script src="../../static/api/user/insert.js"></script>
     </body>
 </html>

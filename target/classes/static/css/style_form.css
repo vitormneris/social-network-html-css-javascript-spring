@@ -41,3 +41,9 @@
 
     height: 10px;
 }
+
+.status {
+    padding: 10px;
+    text-align: center;
+    font-size: 0.7em;
+}

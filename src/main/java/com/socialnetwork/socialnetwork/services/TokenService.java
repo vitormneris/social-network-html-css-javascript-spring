@@ -4,6 +4,7 @@ import com.auth0.jwt.JWT;
 import com.auth0.jwt.algorithms.Algorithm;
 import com.auth0.jwt.exceptions.JWTCreationException;
 import com.auth0.jwt.exceptions.JWTVerificationException;
+import com.auth0.jwt.interfaces.Claim;
 import com.socialnetwork.socialnetwork.infrastructure.entities.UserEntity;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Service;
@@ -23,6 +24,7 @@ public class TokenService {
             return JWT.create()
                 .withIssuer("kuti")
                 .withSubject(userEntity.getLogin())
+                .withClaim("id", userEntity.getId())
                 .withExpiresAt(getExpirationDate())
                 .sign(algorithm);
         } catch (JWTCreationException e) {
@@ -30,7 +32,7 @@ public class TokenService {
         }
     }
 
-    public String validateToken(String token) {
+    public String validateTokenSubject(String token) {
         try {
             Algorithm algorithm = Algorithm.HMAC256(secret);
             return  JWT.require(algorithm)
@@ -41,6 +43,15 @@ public class TokenService {
         } catch (JWTVerificationException e) {
             return "Invalid token";
         }
+    }
+
+    public Claim validateTokenClaim(String token) {
+        Algorithm algorithm = Algorithm.HMAC256(secret);
+        return  JWT.require(algorithm)
+                .withIssuer("kuti")
+                .build()
+                .verify(token)
+                .getClaim("id");
     }
 
     private Instant getExpirationDate() {

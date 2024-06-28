@@ -5,6 +5,7 @@ import com.socialnetwork.socialnetwork.infrastructure.repositories.UserRepositor
 import com.socialnetwork.socialnetwork.services.exceptions.DatabaseException;
 import com.socialnetwork.socialnetwork.services.exceptions.FieldBlankException;
 import com.socialnetwork.socialnetwork.services.exceptions.InvalidFormatException;
+import com.socialnetwork.socialnetwork.services.exceptions.ResourceNotFoundException;
 import lombok.RequiredArgsConstructor;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.stereotype.Service;
@@ -23,6 +24,10 @@ public class UserService {
 
     public List<UserEntity> findAll() {
         return repository.findAll();
+    }
+
+    public UserEntity findById(Long userId) {
+        return repository.findById(userId).orElseThrow(() -> new ResourceNotFoundException("User not found"));
     }
 
     public UserEntity insert(UserEntity userEntity, MultipartFile image) {

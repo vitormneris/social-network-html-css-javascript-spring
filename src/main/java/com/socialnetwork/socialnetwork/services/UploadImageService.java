@@ -22,7 +22,7 @@ public class UploadImageService {
         Path path = Paths.get(url + newName);
         Files.write(path, bytes);
 
-        return "../static/images/users/" + newName;
+        return "../../static/images/users/" + newName;
     }
 
     private String extesionImage(String nameImage) {
